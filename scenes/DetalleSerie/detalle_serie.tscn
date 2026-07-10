@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ce4e1tbmp6nlf"]
+
+[node name="DetalleSerie" type="Control" unique_id=363217423]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
