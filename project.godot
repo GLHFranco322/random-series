@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="RandomSeries"
-run/main_scene="Bienvenida.tscn"
+run/main_scene="uid://p5k2tcwkpbcl"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+
+[autoload]
+
+EstadoNavegacion="*uid://b1k6j2wnlr2b8"
 
 [display]
 

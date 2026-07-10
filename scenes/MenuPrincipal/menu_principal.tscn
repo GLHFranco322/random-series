@@ -1,7 +1,52 @@
 [gd_scene format=3 uid="uid://gwyn88aelhlt"]
 
+[ext_resource type="Script" uid="uid://b7e7ci35qro25" path="res://scenes/MenuPrincipal/menu_principal.gd" id="1_y2ah5"]
+
 [node name="MenuPrincipal" type="Control" unique_id=1051440492]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y2ah5")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=308385997]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.28627345, 0.079269536, 0.21673308, 1)
+
+[node name="Opciones" type="VBoxContainer" parent="." unique_id=1983305185]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -16.0
+offset_right = 4.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="BotonContinuar" type="Button" parent="Opciones" unique_id=209932329]
+layout_mode = 2
+text = "CONTINUAR VIENDO"
+
+[node name="BotonSeleccionarSerie" type="Button" parent="Opciones" unique_id=301946078]
+layout_mode = 2
+text = "SELECCIONAR SERIE"
+
+[node name="BotonSerieRandom" type="Button" parent="Opciones" unique_id=616472816]
+layout_mode = 2
+text = "SERIES RANDOM"
+
+[connection signal="pressed" from="Opciones/BotonContinuar" to="." method="_on_boton_continuar_pressed"]
+[connection signal="pressed" from="Opciones/BotonSeleccionarSerie" to="." method="_on_boton_seleccionar_serie_pressed"]
+[connection signal="pressed" from="Opciones/BotonSerieRandom" to="." method="_on_boron_serie_random_pressed"]

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://byf0pnccqpsum"]
+
+[ext_resource type="Script" uid="uid://bcdarnhnokjh4" path="res://scenes/SeleccionarSerie/seleccionar_sarie.gd" id="1_fcxrc"]
+
+[node name="SeleccionarSarie" type="Control" unique_id=1495573013]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fcxrc")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=9607014]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.28627345, 0.079269536, 0.21673308, 1)
+
+[node name="ScrollLista" type="ScrollContainer" parent="." unique_id=68066249]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -602.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="ListaSeries" type="VBoxContainer" parent="ScrollLista" unique_id=1289007959]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="ItemSerie" type="Button" parent="ScrollLista/ListaSeries" unique_id=1649732093]
+layout_mode = 2
+text = "TITULO"
+
+[node name="ItemSerie2" type="Button" parent="ScrollLista/ListaSeries" unique_id=829057983]
+layout_mode = 2
+text = "TITULO"
+
+[node name="ItemSerie3" type="Button" parent="ScrollLista/ListaSeries" unique_id=978325367]
+layout_mode = 2
+text = "TITULO"
+
+[node name="CapturadorInput" type="Control" parent="." unique_id=1931231011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="gui_input" from="CapturadorInput" to="." method="_on_capturador_input_gui_input"]
