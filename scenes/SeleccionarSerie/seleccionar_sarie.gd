@@ -101,6 +101,21 @@ func _on_capturador_input_gui_input(event: InputEvent) -> void:
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			_mover_foco(-1)
 			accept_event()
+	elif event.is_action_pressed("nav_abajo"):
+		_mover_foco(1)
+		accept_event()
+	elif event.is_action_pressed("nav_arriba"):
+		_mover_foco(-1)
+		accept_event()
+	elif event.is_action_pressed("nav_avanzar"):
+		_confirmar_seleccion()
+		accept_event()
+	elif event.is_action_pressed("nav_retroceder"):
+		_volver()
+		accept_event()
+
+func _volver() -> void:
+	get_tree().change_scene_to_file("res://scenes/MenuPrincipal/menu_principal.tscn")
 
 func _mover_foco(direccion: int) -> void:
 	var indice_actual: int = items.find(get_viewport().gui_get_focus_owner())
@@ -108,3 +123,23 @@ func _mover_foco(direccion: int) -> void:
 		return
 	var nuevo_indice: int = clamp(indice_actual + direccion, 0, items.size() - 1)
 	items[nuevo_indice].grab_focus()
+
+
+func _on_item_serie_pressed() -> void:
+	pass # Replace with function body.
+
+func _confirmar_seleccion() -> void:
+	var indice_actual: int = items.find(get_viewport().gui_get_focus_owner())
+	if indice_actual == -1:
+		return
+	var serie_id: String = items[indice_actual].get_meta("serie_id")
+	EstadoNavegacion.serie_id = serie_id
+	get_tree().change_scene_to_file("res://scenes/DetalleSerie/detalle_serie.tscn")
+
+
+func _on_item_serie_2_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_item_serie_3_pressed() -> void:
+	pass # Replace with function body.

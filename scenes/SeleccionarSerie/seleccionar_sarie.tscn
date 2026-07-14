@@ -55,4 +55,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[connection signal="pressed" from="ScrollLista/ListaSeries/ItemSerie" to="." method="_on_item_serie_pressed"]
+[connection signal="pressed" from="ScrollLista/ListaSeries/ItemSerie2" to="." method="_on_item_serie_2_pressed"]
+[connection signal="pressed" from="ScrollLista/ListaSeries/ItemSerie3" to="." method="_on_item_serie_3_pressed"]
 [connection signal="gui_input" from="CapturadorInput" to="." method="_on_capturador_input_gui_input"]
